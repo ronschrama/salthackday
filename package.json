@@ -1,0 +1,22 @@
+{
+  "name": "salthackday",
+  "version": "1.0.0",
+  "description": "Marvel heros react app with express connection",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronschrama/salthackday.git"
+  },
+  "author": "Ron Schrama",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ronschrama/salthackday/issues"
+  },
+  "homepage": "https://github.com/ronschrama/salthackday#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
