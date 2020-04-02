@@ -4,7 +4,7 @@
   "description": "Marvel heros react app with express connection",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start server": "node server.js"
   },
   "repository": {
     "type": "git",
