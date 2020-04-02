@@ -1,16 +1,19 @@
 const express = require('express');
 const fetch = require('node-fetch');
+const cors = require('cors')
 require('dotenv').config();
 
 const apiKey = process.env.APIKEY
 
 const app = express();
 
+app.use(cors())
+
 app.get('/express_backend', (req, res) => {
   res.send({ express: 'This is the express backend that is connected to react'})
 });
 
-app.get('/:heroID', (req,res) => {
+app.get('http://localhost:3000/:heroID', (req,res) => {
   fetch(`https://gateway.marvel.com/v1/public/characters/${req.params.heroID}${apiKey}`)
   .then(res => res.json())
       .then(Marveldata => {
@@ -24,12 +27,10 @@ app.get('/:heroID', (req,res) => {
             series: Marveldata.data.results[0].series.available,
             stories: Marveldata.data.results[0].stories.available
           }
-        console.log(heroData);
       })
     .catch(err => console.log(err));
     console.log(heroData);  
-    // const data = "Grab data you want to display and put in object"
-  res.send(marvelData)
+  res.send(heroData)
   })
 
 const port = process.env.PORT || 5000;

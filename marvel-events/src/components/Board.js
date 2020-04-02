@@ -1,6 +1,5 @@
 import React from 'react';
-import Card from './Card';
-import NewCard from './NewCard'
+import Card from './Card'
 import './Board.css'
 
 export class Board extends React.Component {
@@ -18,7 +17,7 @@ export class Board extends React.Component {
   }
 
   fetchData = (heroID) => {
-    fetch(`https//localhost:5000/${heroID}`)
+    fetch(`http://localhost:5000/${heroID}`)
       .then(res => res.json())
       .then(marvelData => {
         const heroData = marvelData;
@@ -99,7 +98,7 @@ export class Board extends React.Component {
         <button className="Hero-button" onClick={this.thor}>Thor</button>
         <button className="Hero-button" onClick={this.hulk}>Hulk</button>
         <button className="Hero-button" onClick={this.guardians}>Guardians of the Galaxy</button>
-        <NewCard 
+        < Card 
           name={this.state.data.name}
           desc={this.state.data.desc}
           thumbnail={this.state.data.thumbnail}
