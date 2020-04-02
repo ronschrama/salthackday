@@ -34,7 +34,6 @@ export class App extends React.Component {
       </header>  
       <div className="content">
           <Board />
-          <p className="App-intro">{this.state.data}</p>
       </div>
       </div>
     )

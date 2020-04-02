@@ -22,14 +22,6 @@ export class Board extends React.Component {
       .then(marvelData => {
         // console.log(marvelData);
         const heroData = marvelData;
-          // {
-          //   name: marvelData.name,
-          //   desc: marvelData.description,
-          //   thumbnail: marvelData.data.results[0].events.available,
-          //   comics: marvelData.data.results[0].comics.available,
-          //   series: marvelData.data.results[0].series.available,
-          //   stories: marvelData.data.results[0].stories.available
-          // }
         return heroData
       })
       .then(marvelData => this.setState({data: marvelData}), () => console.log(this.state.data))
@@ -90,7 +82,6 @@ export class Board extends React.Component {
         </div>
       )
     }
-    
     return (
       <div className="board">
         <button className="Hero-button" onClick={this.ironMan}>Iron Man</button>
@@ -102,7 +93,8 @@ export class Board extends React.Component {
         < Card 
           name={this.state.data.name}
           desc={this.state.data.desc}
-          thumbnail={this.state.data.thumbnail}
+          thpath={this.state.data.thumbnailpath}
+          thext={this.state.data.thumbnailext}
           events={this.state.data.events}
           comics={this.state.data.comics}
           series={this.state.data.series}

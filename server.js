@@ -32,7 +32,9 @@ app.get('/:heroID', (req,res) => {
           events: Marveldata.data.results[0].events.available,
           comics: Marveldata.data.results[0].comics.available,
           series: Marveldata.data.results[0].series.available,
-          stories: Marveldata.data.results[0].stories.available
+          stories: Marveldata.data.results[0].stories.available, 
+          thumbnailpath: Marveldata.data.results[0].thumbnail.path,
+          thumbnailext: Marveldata.data.results[0].thumbnail.extension,
         }
       // console.log(heroData)
       console.log(heroData);

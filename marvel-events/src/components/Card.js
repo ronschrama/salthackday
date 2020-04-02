@@ -1,11 +1,11 @@
 import React from 'react';
 import './Card.css';
 
-function NewCard(props) {
+function Card(props) {
     return (
         <div>
              <div className="container">
-         {/* <div className="column-one"><img src={`${props.data.thumbnail.path}.${props.data.thumbnail.extension}`} /></div> */}
+         <div className="column-one"><img src={`${props.thpath}.${props.thext}`} alt="Marvel hero"/></div>
          <div className="column-two">    
          <h2>{props.name}</h2>
          <p>{props.desc}</p>
@@ -21,6 +21,6 @@ function NewCard(props) {
     )
 }
 
-export default NewCard
+export default Card
 
 
