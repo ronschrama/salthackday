@@ -1,6 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Board from './components/Board';
+import Ironman from './components/Ironman';
+import Card from './components/Card'
 
 export class App extends React.Component {
   constructor() {
@@ -30,13 +32,12 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-            <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p className="App-intro">{this.state.data}</p>
+        <header className="App-header">
       </header>  
+      <div className="content">
+          <Board />
+          <p className="App-intro">{this.state.data}</p>
+      </div>
       </div>
     )
   }
