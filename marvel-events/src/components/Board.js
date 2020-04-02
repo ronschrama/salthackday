@@ -20,6 +20,7 @@ export class Board extends React.Component {
     fetch(`http://localhost:5000/${heroID}`)
       .then(res => res.json())
       .then(marvelData => {
+        // console.log(marvelData);
         const heroData = marvelData;
           // {
           //   name: marvelData.name,
@@ -31,7 +32,7 @@ export class Board extends React.Component {
           // }
         return heroData
       })
-      .then(fixedData => this.setState({data: fixedData}), () => console.log(this.state.data))
+      .then(marvelData => this.setState({data: marvelData}), () => console.log(this.state.data))
       .catch(err => console.log(err));
   }
 
