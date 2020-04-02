@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import Board from './components/Board';
-import Ironman from './components/Ironman';
 import Card from './components/Card'
 
 export class App extends React.Component {

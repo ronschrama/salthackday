@@ -1,8 +1,7 @@
 import React from 'react';
-import Event from './Event';
 import './Card.css';
 
-const validation = 'ts=1585810599246&apikey=5f77dba396d8c686ea790e48a5b0ead3&hash=4ce6f06f8cbca41e42ddee6c7d42d4c3'
+const validation = '&ts=hello&apikey=9d217b2414eef649066abed205ac3dd2&hash=13b08340e43408213ae0221f4e6308f4'
 
 export class Card extends React.Component {
   constructor(props) {
@@ -20,6 +19,7 @@ export class Card extends React.Component {
       events: this.props.data.events.collectionURI,
     }
   }
+
   render() {
     return (
       <div className="container">

@@ -4,7 +4,7 @@
   "description": "Marvel heros react app with express connection",
   "main": "server.js",
   "scripts": {
-    "start server": "node server.js"
+    "serverstart": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/ronschrama/salthackday#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.2"
   }
 }

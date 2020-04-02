@@ -1,59 +1,88 @@
 import React from 'react';
 import Card from './Card';
+import NewCard from './NewCard'
 import './Board.css'
-
-const validation = 'ts=1585810599246&apikey=5f77dba396d8c686ea790e48a5b0ead3&hash=4ce6f06f8cbca41e42ddee6c7d42d4c3'
 
 export class Board extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       spinner: 'Loading...',
-      heroName: 'iron%20man',
-      reload: false,
+      heroID: '1009368',
       data: null,
     }
   }
 
   componentDidMount(){
-    this.fetchData(this.state.heroName);
+    this.fetchData(this.state.heroID);
   }
 
-  componentDidUpdate(prevState) {
-    if(this.state.heroName !== prevState.heroName) {
-      this.fetchData(this.state.heroName);
-    }
-  }
-
-  fetchData = (heroName) => {
-    fetch(`https://gateway.marvel.com/v1/public/characters?name=${heroName}&${validation}`)
+  fetchData = (heroID) => {
+    fetch(`https//localhost:5000/${heroID}`)
       .then(res => res.json())
-      .then(data => this.setState({data}))
+      .then(marvelData => {
+        const heroData = marvelData;
+          // {
+          //   name: marvelData.name,
+          //   desc: marvelData.description,
+          //   thumbnail: marvelData.data.results[0].events.available,
+          //   comics: marvelData.data.results[0].comics.available,
+          //   series: marvelData.data.results[0].series.available,
+          //   stories: marvelData.data.results[0].stories.available
+          // }
+        return heroData
+      })
+      .then(fixedData => this.setState({data: fixedData}), () => console.log(this.state.data))
       .catch(err => console.log(err));
   }
 
-  // componentDidMount() {
-  //   this.fetchData(`https://gateway.marvel.com/v1/public/characters?name=${this.state.heroName}&${validation}`)
-  // }
 
-  // fetchData = (url) => {
-  //   fetch(url)
-  //     .then((res) => res.json())
-  //     .then((data) => this.setState({ data }))
-  //     .catch(err => console.log(err));
-  // }
-
-
-  // }
-
-  Spiderman = () => {
+  spiderman = () => {
     this.setState({
-      heroName: "spider-man",
-      reload: true
+      heroID: '1009610',
+    }, ()=> {
+      console.log(this.state.heroID)
+      this.fetchData(this.state.heroID)
     })};
+  ironMan = () => {
+    this.setState({
+      heroID: '1009368',
+    },()=> {
+      console.log(this.state.heroID)
+      this.fetchData(this.state.heroID)
+    })};
+  cptAmerica = () => {
+    this.setState({
+      heroID: '1009220',
+    },()=> {
+      console.log(this.state.heroID)
+      this.fetchData(this.state.heroID)
+    })};
+  thor = () => {
+    this.setState({
+      heroID: '1009664',
+    },()=> {
+      console.log(this.state.heroID)
+      this.fetchData(this.state.heroID)
+    })};
+  hulk = () => {
+    this.setState({
+      heroID: '1009351',
+    },()=> {
+      console.log(this.state.heroID)
+      this.fetchData(this.state.heroID)
+    })
+  }
+  guardians = () => {
+    this.setState({
+      heroID: '1011299',
+    },()=> {
+      console.log(this.state.heroID)
+      this.fetchData(this.state.heroID)
+    })
+  }
 
   render() {
-    console.log(this.state.data);
     if (!this.state.data) {
       return (
         <div>
@@ -61,11 +90,23 @@ export class Board extends React.Component {
         </div>
       )
     }
-
+    
     return (
       <div className="board">
-        <button className="Hero-button" onClick={this.Spiderman}>Spiderman</button>
-        <Card data={this.state.data.data.results[0]}/>
+        <button className="Hero-button" onClick={this.ironMan}>Iron Man</button>
+        <button className="Hero-button" onClick={this.spiderman}>Spiderman</button>
+        <button className="Hero-button" onClick={this.cptAmerica}>Captain America</button>
+        <button className="Hero-button" onClick={this.thor}>Thor</button>
+        <button className="Hero-button" onClick={this.hulk}>Hulk</button>
+        <button className="Hero-button" onClick={this.guardians}>Guardians of the Galaxy</button>
+        <NewCard 
+          name={this.state.data.name}
+          desc={this.state.data.desc}
+          thumbnail={this.state.data.thumbnail}
+          events={this.state.data.events}
+          comics={this.state.data.comics}
+          series={this.state.data.series}
+          stories={this.state.data.stories}/>
       </div>
     )
   }
