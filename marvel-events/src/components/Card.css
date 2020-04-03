@@ -8,9 +8,10 @@ body {
   display: flex;
   flex-direction: row;
   align-self: center;
-  background-color: #EFF0F3;
+  background-color: #fffffe;
   padding: 24px;
   margin: auto;
+  border-radius: 8px 8px 0px 0px;
 }
 
 .column-one {
@@ -21,6 +22,7 @@ body {
   margin-left: 12px;
 }
 img {
+  margin-top: 20px;
   height: 160px;
   width: 160px;
   border-radius: 50%;
@@ -36,7 +38,23 @@ p {
   font-size: 14px;
 }
 
-ul {
+.wiki-link {
+  font-size: 14px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+}
+ul.horizontal-list {
+  margin-top: -8px;
   list-style: none;
   font-size: 12px;
+}
+ul.horizontal-list li {
+  display: inline;
+  margin-right: 24px;
+}
+ul.horizontal-list li:first-of-type {
+  display: inline;
+  margin-right: 24px;
+  margin-left: -40px;
 }

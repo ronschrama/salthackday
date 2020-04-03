@@ -7,7 +7,7 @@ export class Board extends React.Component {
     super(props)
     this.state = {
       spinner: 'Loading...',
-      heroID: '1009368',
+      heroID: null,
       data: null,
     }
   }
@@ -20,14 +20,12 @@ export class Board extends React.Component {
     fetch(`http://localhost:5000/${heroID}`)
       .then(res => res.json())
       .then(marvelData => {
-        // console.log(marvelData);
         const heroData = marvelData;
         return heroData
       })
       .then(marvelData => this.setState({data: marvelData}), () => console.log(this.state.data))
       .catch(err => console.log(err));
   }
-
 
   spiderman = () => {
     this.setState({
@@ -77,22 +75,30 @@ export class Board extends React.Component {
   render() {
     if (!this.state.data) {
       return (
-        <div>
-          <p> {this.state.spinner} </p>
+        <div className="board">
+          <button className="Hero-button" onClick={this.ironMan}>Iron Man</button>
+        <button className="Hero-button" onClick={this.spiderman}>Spiderman</button>
+        <button className="Hero-button" onClick={this.cptAmerica}>Captain America</button>
+        <button className="Hero-button" onClick={this.thor}>Thor</button>
+        <button className="Hero-button" onClick={this.hulk}>Hulk</button>
+        <button className="Hero-button" onClick={this.guardians}>Guardians of the Galaxy</button>
         </div>
       )
     }
     return (
       <div className="board">
+        <div className="button-box">
         <button className="Hero-button" onClick={this.ironMan}>Iron Man</button>
         <button className="Hero-button" onClick={this.spiderman}>Spiderman</button>
         <button className="Hero-button" onClick={this.cptAmerica}>Captain America</button>
         <button className="Hero-button" onClick={this.thor}>Thor</button>
         <button className="Hero-button" onClick={this.hulk}>Hulk</button>
         <button className="Hero-button" onClick={this.guardians}>Guardians of the Galaxy</button>
+        </div>
         < Card 
           name={this.state.data.name}
           desc={this.state.data.desc}
+          wiki={this.state.data.wiki}
           thpath={this.state.data.thumbnailpath}
           thext={this.state.data.thumbnailext}
           events={this.state.data.events}

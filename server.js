@@ -4,8 +4,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 
-
-
 const apiKey = process.env.APIKEY
 
 const app = express();
@@ -23,20 +21,21 @@ let heroData;
 app.get('/:heroID', (req,res) => {
   fetch(`https://gateway.marvel.com/v1/public/characters/${req.params.heroID}${apiKey}`)
   .then(res => res.json())
-    .then(Marveldata => {
-      console.log(Marveldata)
+  .then(Marveldata => {
+    console.log(Marveldata)
+    const data = Marveldata.data.results[0];
       heroData = 
          {
-          name: Marveldata.data.results[0].name,
-          desc: Marveldata.data.results[0].description,
-          events: Marveldata.data.results[0].events.available,
-          comics: Marveldata.data.results[0].comics.available,
-          series: Marveldata.data.results[0].series.available,
-          stories: Marveldata.data.results[0].stories.available, 
-          thumbnailpath: Marveldata.data.results[0].thumbnail.path,
-          thumbnailext: Marveldata.data.results[0].thumbnail.extension,
+          name: data.name,
+          desc: data.description,
+          events: data.events.available,
+          comics: data.comics.available,
+          series: data.series.available,
+          stories: data.stories.available, 
+          wiki: data.urls[1].url,
+          thumbnailpath: data.thumbnail.path,
+          thumbnailext: data.thumbnail.extension,
         }
-      // console.log(heroData)
       console.log(heroData);
       res.send(heroData);
     })

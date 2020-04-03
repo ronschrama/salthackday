@@ -5,13 +5,24 @@ body {
 }
 
 .board {
-  width: 80%;
-  background-color: #ffffff;
+  width: 600px;
   margin: auto;
   align-items: center;
+  justify-content: center;
+  margin-top: 16px;
 }
-
+.button-box {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
 .Hero-button {
-  border-radius: 2px;
-  padding: 4px 8px 4px 8px;
+  background: #ffffff;
+  border-radius: 3px;
+  border: 1px solid #F11E22;
+  color: #F11E22;
+  margin: 0.2em 0.2em;
+  padding: 0.25em 1em;
 }

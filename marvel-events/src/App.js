@@ -31,10 +31,11 @@ export class App extends React.Component {
     return (
       <div>
         <header className="App-header">
-      </header>  
-      <div className="content">
+          <img src="Marvel-Logo.svg"></img>
+        </header>  
+        <div className="content">
           <Board />
-      </div>
+        </div>
       </div>
     )
   }
