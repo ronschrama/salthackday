@@ -1,0 +1,27 @@
+body {
+  display: flex;
+}
+
+.card-container {
+  margin: auto;
+  justify-content: center;
+  flex-direction: column;
+}
+h3 {
+  display: block;
+  text-align: center;
+}
+.button-box {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.Hero-button {
+  background: #fffffe;
+  border-radius: 3px;
+  border: 1px solid #F11E22;
+  color: #F11E22;
+  margin: 0.2em 0.2em;
+  padding: 0.25em 1em;
+}

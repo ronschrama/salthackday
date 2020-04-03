@@ -9,7 +9,9 @@ body {
   margin: auto;
   align-items: center;
   justify-content: center;
-  margin-top: 16px;
+}
+h3 {
+  text-align: center;
 }
 .button-box {
   display: flex;
@@ -19,10 +21,24 @@ body {
   margin-bottom: 16px;
 }
 .Hero-button {
-  background: #ffffff;
+  background: #fffffe;
   border-radius: 3px;
   border: 1px solid #F11E22;
   color: #F11E22;
   margin: 0.2em 0.2em;
   padding: 0.25em 1em;
+}
+
+.card-placeholder {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  background-color: #fffffe;
+  padding: 24px;
+  margin: auto;
+  border-radius: 8px 8px 0px 0px;
+}
+.card-placeholder p {
+  margin: auto;
+  height: 100px;
 }

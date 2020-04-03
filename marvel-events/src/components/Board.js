@@ -76,24 +76,31 @@ export class Board extends React.Component {
     if (!this.state.data) {
       return (
         <div className="board">
-          <button className="Hero-button" onClick={this.ironMan}>Iron Man</button>
-        <button className="Hero-button" onClick={this.spiderman}>Spiderman</button>
-        <button className="Hero-button" onClick={this.cptAmerica}>Captain America</button>
-        <button className="Hero-button" onClick={this.thor}>Thor</button>
-        <button className="Hero-button" onClick={this.hulk}>Hulk</button>
-        <button className="Hero-button" onClick={this.guardians}>Guardians of the Galaxy</button>
+          <h3>Welcome to the marvellous world of the Marvel universe!</h3>
+          <div className="button-box">
+            <button className="Hero-button" onClick={this.ironMan}>Iron Man</button>
+            <button className="Hero-button" onClick={this.spiderman}>Spiderman</button>
+            <button className="Hero-button" onClick={this.cptAmerica}>Captain America</button>
+            <button className="Hero-button" onClick={this.thor}>Thor</button>
+            <button className="Hero-button" onClick={this.hulk}>Hulk</button>
+            <button className="Hero-button" onClick={this.guardians}>Guardians of the Galaxy</button>
+          </div>
+          <div className="card-placeholder">
+            <p>Select your hero to see it's information in this card</p>
+          </div>
         </div>
       )
     }
     return (
       <div className="board">
+        <h3>Welcome to the marvellous world of the Marvel universe!</h3>
         <div className="button-box">
-        <button className="Hero-button" onClick={this.ironMan}>Iron Man</button>
-        <button className="Hero-button" onClick={this.spiderman}>Spiderman</button>
-        <button className="Hero-button" onClick={this.cptAmerica}>Captain America</button>
-        <button className="Hero-button" onClick={this.thor}>Thor</button>
-        <button className="Hero-button" onClick={this.hulk}>Hulk</button>
-        <button className="Hero-button" onClick={this.guardians}>Guardians of the Galaxy</button>
+          <button className="Hero-button" onClick={this.ironMan}>Iron Man</button>
+          <button className="Hero-button" onClick={this.spiderman}>Spiderman</button>
+          <button className="Hero-button" onClick={this.cptAmerica}>Captain America</button>
+          <button className="Hero-button" onClick={this.thor}>Thor</button>
+          <button className="Hero-button" onClick={this.hulk}>Hulk</button>
+          <button className="Hero-button" onClick={this.guardians}>Guardians of the Galaxy</button>
         </div>
         < Card 
           name={this.state.data.name}

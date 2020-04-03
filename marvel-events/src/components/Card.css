@@ -9,7 +9,7 @@ body {
   flex-direction: row;
   align-self: center;
   background-color: #fffffe;
-  padding: 24px;
+  padding: 0px 16px 16px 16px;
   margin: auto;
   border-radius: 8px 8px 0px 0px;
 }
@@ -22,7 +22,7 @@ body {
   margin-left: 12px;
 }
 img {
-  margin-top: 20px;
+  margin-top: 28px;
   height: 160px;
   width: 160px;
   border-radius: 50%;
