@@ -5,4 +5,4 @@ This project had to contain a frontend and a backend and request information fro
 # My Project
 For this hackday I created a website with React and used Express for the routing and API data fetching.
 
-![Image of the page](/images/marvelHeros.png)
+![Image of the page](/images/marvelHerosPage.png)
